@@ -94,7 +94,6 @@ func main() {
 				tmpip := tmp2[0]
 				targets = append(targets, tmpip)
 			}
-			fmt.Println(targets)
 		}
 		for _,ip := range targets{
 
