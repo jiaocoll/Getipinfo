@@ -80,11 +80,24 @@ func main() {
 		tmps := bufio.NewScanner(targetfile)
 		for tmps.Scan(){
 			tmp := tmps.Text()
-			tmp2 := strings.Split(tmp,":")
-			tmpip := tmp2[0]
-			targets = append(targets, tmpip)
+			if strings.Contains(tmp,"https://") || strings.Contains(tmp,"http://"){
+				tmp2 := strings.Split(tmp,"//")
+				tmpip := tmp2[1]
+				if strings.Contains(tmpip,":") {
+					tmpip2 := strings.Split(tmpip,":")[0]
+					targets = append(targets, tmpip2)
+				}else {
+					targets = append(targets, tmpip)
+				}
+			}else {
+				tmp2 := strings.Split(tmp,":")
+				tmpip := tmp2[0]
+				targets = append(targets, tmpip)
+			}
+			fmt.Println(targets)
 		}
 		for _,ip := range targets{
+
 			data := ipLocation(ip,"jsonp")
 			datas = append(datas, data)
 		}
