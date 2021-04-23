@@ -18,11 +18,11 @@ var(
 	filename string
 	outputfile string
 	help bool
+	TOKEN string
 )
 
 const (
 	URL   = "https://api.ip138.com/ip/"
-	TOKEN = "cf8efae9550c25033e085bb89b0bac69"
 )
 
 //----------------------------------
@@ -56,6 +56,7 @@ func init(){
 	flag.BoolVar(&help,"h, --help",false,"help, 帮助命令")
 	flag.StringVar(&filename,"i","","要读取的文件")
 	flag.StringVar(&outputfile,"o","","要输出的文件")
+	flag.StringVar(&TOKEN,"token","","你账号的token值")
 	flag.Usage = usage
 	flag.Parse()
 
