@@ -1,7 +1,7 @@
 # Getipinfo
 Go语言ip138脚本
 ```
--h, --help
+  -h, --help
         help, 帮助命令
   -i string
         要读取的文件,每行一个ip,做了优化，以下格式都可以：①http://192.168.1.1 ②https://192.168.1.1
