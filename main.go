@@ -25,9 +25,6 @@ const (
 	URL   = "https://api.ip138.com/ip/"
 )
 
-//----------------------------------
-// iP地址调用示例代码
-//----------------------------------
 
 // xml struct
 type xmlinfo struct {
